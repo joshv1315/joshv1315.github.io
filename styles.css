@@ -262,8 +262,16 @@ main {
   box-shadow: 0 6px 20px rgba(0,0,0,0.09);
 }
 
+.project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
 .project-link {
   display: block;
+  min-width: 0;
 }
 
 .project-name {
@@ -274,6 +282,13 @@ main {
 
 .project-link:hover .project-name {
   text-decoration: underline;
+}
+
+.project-logo {
+  width: 52px;
+  height: auto;
+  flex-shrink: 0;
+  opacity: 0.75;
 }
 
 .project-desc {
