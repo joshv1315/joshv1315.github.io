@@ -59,7 +59,25 @@ function renderGrid(projects, containerId) {
   projects.forEach((p) => container.appendChild(createProjectCard(p)));
 }
 
+let toastTimer = null;
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 3000);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderGrid(workProjects, "work-grid");
   renderGrid(personalProjects, "personal-grid");
+
+  const resumeBtn = document.getElementById("resume-btn");
+  if (resumeBtn) {
+    resumeBtn.addEventListener("click", () => {
+      showToast("TODO: Add resume after updating it lol");
+    });
+  }
 });
