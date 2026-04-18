@@ -1,4 +1,4 @@
-# CLAUDE.md — joshuavijaysegar.com
+# CLAUDE.md — joshuavijayasegar.com
 
 Personal website for Joshua Vijayasegar. Single-page, no framework.
 
@@ -11,7 +11,6 @@ src/main.ts         # TypeScript source — renders project cards from data arra
 dist/main.js        # compiled output — committed, not gitignored
 imgs/               # images (pic_of_josh.jpg is the profile photo)
 files/              # static assets (resume PDF)
-CNAME               # GitHub Pages custom domain
 ```
 
 ## Key conventions
@@ -20,6 +19,7 @@ CNAME               # GitHub Pages custom domain
 - **No build pipeline at runtime.** `dist/main.js` is committed so GitHub Pages can serve it directly without a CI build step.
 - **Single page.** Everything lives in `index.html`. No routing.
 - **Design tokens** are CSS custom properties in `:root` at the top of `styles.css`. Change colors/fonts there.
+- **No secrets in the repo.** Use GitHub Actions secrets for any credentials.
 
 ## Adding a project
 
@@ -29,9 +29,7 @@ CNAME               # GitHub Pages custom domain
 
 ## Hosting
 
-GitHub Pages. Custom domain set in `CNAME`. DNS must have:
-- `CNAME www → joshv1315.github.io`
-- `A @ → GitHub Pages IPs` (for apex domain redirect)
+GitHub Pages, served from `joshv1315.github.io`. Custom domain (`www.joshuavijayasegar.com`) to be added once domain is purchased. DNS setup: CNAME `www → joshv1315.github.io` plus A records for apex domain.
 
 ## Owner
 
