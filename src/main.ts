@@ -3,6 +3,7 @@ interface Project {
   description: string;
   url: string;
   tags: string[];
+  logo?: string;
 }
 
 const workProjects: Project[] = [
@@ -12,6 +13,7 @@ const workProjects: Project[] = [
       "Engineered Amazon's Dash Cart at Whole Foods, a smart shopping cart that streamlines the shopping experience and lets customers skip the checkout line with automatic checkout.",
     url: "https://www.grocerydive.com/news/amazon-updates-smart-carts-whole-foods-rollout/809058/",
     tags: ["Golang", "Java", "TypeScript", "Angular", "gRPC", "Microservices", "Docker", "AWS Services"],
+    logo: "imgs/logos/amazon.svg",
   },
 ];
 
@@ -29,6 +31,9 @@ function createProjectCard(project: Project): HTMLElement {
   const card = document.createElement("article");
   card.className = "project-card";
 
+  const header = document.createElement("div");
+  header.className = "project-header";
+
   const link = document.createElement("a");
   link.href = project.url;
   link.target = "_blank";
@@ -38,6 +43,17 @@ function createProjectCard(project: Project): HTMLElement {
   const name = document.createElement("h3");
   name.className = "project-name";
   name.textContent = project.name;
+
+  link.appendChild(name);
+  header.appendChild(link);
+
+  if (project.logo) {
+    const logo = document.createElement("img");
+    logo.src = project.logo;
+    logo.alt = "";
+    logo.className = "project-logo";
+    header.appendChild(logo);
+  }
 
   const desc = document.createElement("p");
   desc.className = "project-desc";
@@ -52,8 +68,7 @@ function createProjectCard(project: Project): HTMLElement {
     tags.appendChild(span);
   });
 
-  link.appendChild(name);
-  card.appendChild(link);
+  card.appendChild(header);
   card.appendChild(desc);
   card.appendChild(tags);
 
