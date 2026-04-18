@@ -1,6 +1,6 @@
-# joshuavijaysegar.com
+# joshuavijayasegar.com
 
-Personal website for Joshua Vijayasegar, hosted on GitHub Pages at [www.joshuavijaysegar.com](https://www.joshuavijaysegar.com).
+Personal website for Joshua Vijayasegar, hosted on GitHub Pages at [www.joshuavijayasegar.com](https://www.joshuavijayasegar.com).
 
 ## Stack
 
@@ -26,10 +26,9 @@ Edit the `projects` array in `src/main.ts`, rebuild (`npm run build`), and commi
 
 ## Hosting
 
-Hosted via GitHub Pages. The `CNAME` file points to `www.joshuavijaysegar.com`.
-
-To wire up the custom domain:
-1. Purchase `joshuavijaysegar.com` from a registrar (Namecheap, Cloudflare, etc.)
+Hosted via GitHub Pages at `joshv1315.github.io`. Once the domain is purchased, add a `CNAME` file containing `www.joshuavijayasegar.com` and configure DNS:
+1. Purchase `joshuavijayasegar.com` from a registrar (Namecheap, Cloudflare, etc.)
 2. Add a CNAME DNS record: `www` → `joshv1315.github.io`
-3. Add an A record for the apex domain pointing to GitHub Pages IPs (see [GitHub docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site))
-4. Enable "Enforce HTTPS" in the GitHub Pages settings for the repo
+3. Add A records for the apex domain pointing to GitHub Pages IPs (see [GitHub docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site))
+4. Add a `CNAME` file to the repo root containing `www.joshuavijayasegar.com`
+5. Enable "Enforce HTTPS" in the GitHub Pages settings for the repo
