@@ -7,9 +7,9 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: "joshuavijaysegar.com",
+    name: "joshuavijayasegar.com",
     description: "This personal website — built from scratch with TypeScript, HTML, and CSS. No frameworks.",
-    url: "https://www.joshuavijaysegar.com",
+    url: "https://www.joshuavijayasegar.com",
     tags: ["TypeScript", "HTML", "CSS"],
   },
 ];
