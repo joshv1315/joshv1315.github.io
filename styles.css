@@ -16,7 +16,7 @@
   --border: #E4D9CD;
   --radius: 12px;
   --font: "Inter", system-ui, sans-serif;
-  --max-w: 860px;
+  --max-w: 900px;
   --shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
 
@@ -46,15 +46,16 @@ a {
 /* Background rotating shape */
 .bg-shape {
   position: fixed;
-  width: 780px;
-  height: 780px;
-  bottom: -160px;
-  right: -180px;
-  border-radius: 42% 58% 61% 39% / 45% 38% 62% 55%;
-  background: rgba(217, 79, 67, 0.055);
+  width: 764px;
+  height: 771px;
+  bottom: 10%;
+  right: -10%;
+  background: url('imgs/detail/wave.png') center center no-repeat;
+  background-size: contain;
   animation: rotate-shape 90s linear infinite;
   z-index: 0;
   pointer-events: none;
+  opacity: 0.5;
 }
 
 @keyframes rotate-shape {
@@ -122,10 +123,10 @@ main {
   width: 100%;
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 52px 40px 80px;
+  padding: 64px 40px 80px;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 72px;
   position: relative;
   z-index: 1;
 }
@@ -133,14 +134,15 @@ main {
 /* Hero */
 .hero {
   display: flex;
-  gap: 40px;
+  gap: 52px;
   align-items: flex-start;
+  min-height: calc(100vh - 60px - 64px);
 }
 
 .hero-photo {
-  width: 180px;
-  height: 220px;
-  border-radius: 10px;
+  width: 240px;
+  height: 300px;
+  border-radius: 12px;
   object-fit: cover;
   object-position: center 35%;
   flex-shrink: 0;
@@ -152,31 +154,32 @@ main {
 .hero-text {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
+  padding-top: 8px;
 }
 
 .hero-name {
-  font-size: 1.85rem;
+  font-size: 2.4rem;
   font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
 }
 
 .hero-role {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 500;
   color: var(--text-muted);
 }
 
 .hero-blurb {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text-muted);
-  line-height: 1.7;
-  max-width: 480px;
+  line-height: 1.75;
+  max-width: 500px;
 }
 
 .hero-contact {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   margin-top: 4px;
 }
 
@@ -280,25 +283,30 @@ main {
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .site-header {
     padding: 0 20px;
   }
 
   main {
     padding: 36px 20px 60px;
-    gap: 48px;
+    gap: 56px;
   }
 
   .hero {
     flex-direction: column;
     align-items: flex-start;
-    gap: 24px;
+    gap: 28px;
+    min-height: unset;
   }
 
   .hero-photo {
-    width: 140px;
-    height: 170px;
+    width: 160px;
+    height: 200px;
+  }
+
+  .hero-name {
+    font-size: 1.8rem;
   }
 
   .hero-blurb {
@@ -310,9 +318,9 @@ main {
   }
 
   .bg-shape {
-    width: 500px;
-    height: 500px;
-    bottom: -100px;
-    right: -150px;
+    width: 400px;
+    height: 400px;
+    right: -20%;
+    bottom: 5%;
   }
 }
