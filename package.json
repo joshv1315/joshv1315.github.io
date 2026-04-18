@@ -1,0 +1,12 @@
+{
+  "name": "joshuavijaysegar-com",
+  "version": "1.0.0",
+  "description": "Personal website for Joshua Vijayasegar",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
