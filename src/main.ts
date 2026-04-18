@@ -5,10 +5,21 @@ interface Project {
   tags: string[];
 }
 
-const projects: Project[] = [
+const workProjects: Project[] = [
+  {
+    name: "Amazon Dash Cart",
+    description:
+      "Engineered Amazon's Dash Cart at Whole Foods, a smart shopping cart that lets customers skip the checkout line by detecting items as they shop.",
+    url: "https://www.grocerydive.com/news/amazon-updates-smart-carts-whole-foods-rollout/809058/",
+    tags: ["Amazon", "Hardware", "Retail Tech"],
+  },
+];
+
+const personalProjects: Project[] = [
   {
     name: "joshuavijayasegar.com",
-    description: "This personal website, built from scratch with TypeScript, HTML, and CSS. No frameworks.",
+    description:
+      "This personal website, built from scratch with TypeScript, HTML, and CSS. No frameworks.",
     url: "https://www.joshuavijayasegar.com",
     tags: ["TypeScript", "HTML", "CSS"],
   },
@@ -49,24 +60,13 @@ function createProjectCard(project: Project): HTMLElement {
   return card;
 }
 
-function renderProjects(): void {
-  const container = document.getElementById("projects-grid");
+function renderGrid(projects: Project[], containerId: string): void {
+  const container = document.getElementById(containerId);
   if (!container) return;
-
-  const countEl = document.getElementById("project-count");
-  if (countEl) countEl.textContent = `${projects.length}`;
-
-  if (projects.length === 0) {
-    const empty = document.createElement("p");
-    empty.className = "projects-empty";
-    empty.textContent = "More projects coming soon.";
-    container.appendChild(empty);
-    return;
-  }
-
-  projects.forEach((project) => {
-    container.appendChild(createProjectCard(project));
-  });
+  projects.forEach((p) => container.appendChild(createProjectCard(p)));
 }
 
-document.addEventListener("DOMContentLoaded", renderProjects);
+document.addEventListener("DOMContentLoaded", () => {
+  renderGrid(workProjects, "work-grid");
+  renderGrid(personalProjects, "personal-grid");
+});
