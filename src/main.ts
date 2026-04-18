@@ -11,7 +11,7 @@ const workProjects: Project[] = [
     description:
       "Engineered Amazon's Dash Cart at Whole Foods, a smart shopping cart that lets customers skip the checkout line by detecting items as they shop.",
     url: "https://www.grocerydive.com/news/amazon-updates-smart-carts-whole-foods-rollout/809058/",
-    tags: ["Amazon", "Hardware", "Retail Tech"],
+    tags: ["Golang", "Java", "TypeScript", "Angular", "gRPC", "Microservices", "Docker", "AWS Services"],
   },
 ];
 
