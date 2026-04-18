@@ -4,12 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Joshua Vijayasegar</title>
-    <meta name="description" content="Joshua Vijayasegar — Software Engineer" />
+    <meta name="description" content="Joshua Vijayasegar, Software Engineer" />
     <meta name="author" content="Joshua Vijayasegar" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -19,49 +19,32 @@
       <span class="site-name">Joshua Vijayasegar</span>
       <nav class="site-nav">
         <a href="mailto:joshv1315@gmail.com" class="nav-link">Email</a>
-        <a
-          href="https://github.com/joshv1315"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="nav-link"
-          >GitHub</a
-        >
-        <a
-          href="https://www.linkedin.com/in/joshuavijayasegar/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="nav-link"
-          >LinkedIn</a
-        >
-        <a
-          href="files/Joshua_Vijayasegar_Resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="nav-link nav-link--accent"
-          >Resume</a
-        >
+        <a href="https://github.com/joshv1315" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
+        <a href="https://www.linkedin.com/in/joshuavijayasegar/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+        <a href="files/Joshua_Vijayasegar_Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-link nav-link--resume">Resume</a>
       </nav>
     </header>
 
     <main>
       <section class="hero">
-        <img
-          src="imgs/pic_of_josh.jpg"
-          alt="Joshua Vijayasegar"
-          class="hero-photo"
-        />
+        <div class="hero-photo-wrap">
+          <img src="imgs/pic_of_josh.jpg" alt="Joshua Vijayasegar" class="hero-photo" />
+        </div>
         <div class="hero-text">
-          <h1 class="hero-name">Hi, I'm Josh</h1>
-          <p class="hero-role">Software Engineer &mdash; Boston, MA</p>
+          <div class="hero-title-row">
+            <h1 class="hero-name">Joshua Vijayasegar</h1>
+            <span class="hero-badge">Open to opportunities</span>
+          </div>
+          <p class="hero-role">Software Engineer, Boston MA</p>
+          <div class="hero-divider"></div>
           <p class="hero-blurb">
-            B.S.E. Computer Science, University of Michigan &rsquo;25. I love
+            B.S.E. Computer Science, University of Michigan 2025. I love
             working on initiatives that solve real problems for people and
             collaborating with others who push me to grow.
           </p>
           <p class="hero-blurb">
-            For the past 6 months I&rsquo;ve been engineering Amazon&rsquo;s
-            Dash Cart &mdash; a product aiming to change how grocery shopping
-            works.
+            For the past 6 months I have been engineering Amazon's Dash Cart,
+            a product aiming to change how grocery shopping works.
           </p>
           <p class="hero-blurb">
             Outside of work: basketball, tennis, the outdoors, board games, and
@@ -71,13 +54,16 @@
       </section>
 
       <section class="projects">
-        <h2 class="section-title">Projects</h2>
+        <div class="section-header">
+          <h2 class="section-title">Projects</h2>
+          <span class="section-count" id="project-count"></span>
+        </div>
         <div id="projects-grid" class="projects-grid"></div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>&copy; 2025 Joshua Vijayasegar</p>
+      <p>Joshua Vijayasegar &middot; joshv1315@gmail.com</p>
     </footer>
 
     <script src="dist/main.js"></script>
