@@ -21,7 +21,7 @@ const personalProjects: Project[] = [
   {
     name: "joshuavijayasegar.com",
     description:
-      "This personal website, built from scratch with TypeScript, HTML, and CSS. No frameworks.",
+      "This personal website, built from scratch with TypeScript, HTML, and CSS.",
     url: "https://www.joshuavijayasegar.com",
     tags: ["TypeScript", "HTML", "CSS"],
   },
