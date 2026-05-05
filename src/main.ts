@@ -8,7 +8,7 @@ interface Project {
 
 const workProjects: Project[] = [
   {
-    name: "Amazon Dash Cart",
+    name: "Amazon",
     description:
       "Worked on Amazon's Dash Cart at Whole Foods, a smart shopping cart that streamlines the shopping experience and lets customers skip the checkout line with automatic checkout.",
     url: "https://www.grocerydive.com/news/amazon-updates-smart-carts-whole-foods-rollout/809058/",
