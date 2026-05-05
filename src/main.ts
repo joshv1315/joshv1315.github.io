@@ -27,7 +27,7 @@ const personalProjects: Project[] = [
   },
   {
     name: "hillklimb.com",
-    description: "Job search platform optimized for new grad SWE/PM recruiting.",
+    description: "Job search platform optimized for early career SWE/PM recruiting.",
     url: "#",
     tags: ["In Development"],
   },
