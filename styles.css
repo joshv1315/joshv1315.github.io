@@ -167,16 +167,21 @@ main {
   align-items: stretch;
 }
 
-.hero-photo {
-  width: 240px;
-  height: auto;
+.hero-photo-wrap {
+  width: 300px;
+  flex-shrink: 0;
   align-self: stretch;
   border-radius: 12px;
-  object-fit: cover;
-  object-position: center 35%;
-  flex-shrink: 0;
+  overflow: hidden;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
   display: block;
 }
 
@@ -338,7 +343,7 @@ main {
   .site-header { padding: 0 20px; }
   main { padding: 36px 20px 60px; gap: 40px; }
   .hero { flex-direction: column; align-items: flex-start; gap: 28px; }
-  .hero-photo { width: 160px; height: 200px; align-self: auto; }
+  .hero-photo-wrap { width: 200px; aspect-ratio: 4 / 5; align-self: auto; }
   .hero-name { font-size: 1.8rem; }
   .hero-blurb { max-width: 100%; }
   .site-nav { gap: 0; }
