@@ -171,6 +171,7 @@ main {
   width: 300px;
   flex-shrink: 0;
   align-self: stretch;
+  position: relative;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--border);
@@ -178,6 +179,8 @@ main {
 }
 
 .hero-photo {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
