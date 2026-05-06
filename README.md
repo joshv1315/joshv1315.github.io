@@ -6,9 +6,9 @@ Personal website for Joshua Vijayasegar, hosted on GitHub Pages at [www.joshuavi
 
 - **HTML** — single-page layout (`index.html`)
 - **CSS** — custom properties, flexbox/grid, mobile-responsive (`styles.css`)
-- **TypeScript** — project cards rendered dynamically (`src/main.ts` → `dist/main.js`)
+- **TypeScript** — project cards rendered dynamically (`src/main.ts`)
 
-No frameworks. No build pipeline required at runtime — `dist/main.js` is committed alongside the source.
+No frameworks. `dist/main.js` is compiled and deployed automatically via GitHub Actions on every push to `main`.
 
 ## Development
 
@@ -22,13 +22,8 @@ npm run watch      # recompile on save
 
 ## Adding a project
 
-Edit the `projects` array in `src/main.ts`, rebuild (`npm run build`), and commit both `src/main.ts` and `dist/main.js`.
+Edit the `projects` array in `src/main.ts` and push — CI handles the build and deploy.
 
 ## Hosting
 
-Hosted via GitHub Pages at `joshv1315.github.io`. Once the domain is purchased, add a `CNAME` file containing `www.joshuavijayasegar.com` and configure DNS:
-1. Purchase `joshuavijayasegar.com` from a registrar (Namecheap, Cloudflare, etc.)
-2. Add a CNAME DNS record: `www` → `joshv1315.github.io`
-3. Add A records for the apex domain pointing to GitHub Pages IPs (see [GitHub docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site))
-4. Add a `CNAME` file to the repo root containing `www.joshuavijayasegar.com`
-5. Enable "Enforce HTTPS" in the GitHub Pages settings for the repo
+Hosted via GitHub Pages at `joshv1315.github.io` with a custom domain at `www.joshuavijayasegar.com`. DNS is configured with a CNAME `www → joshv1315.github.io` plus A records for the apex domain.
