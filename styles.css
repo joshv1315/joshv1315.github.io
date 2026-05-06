@@ -298,7 +298,9 @@ main {
 }
 
 .project-logo {
-  width: 52px;
+  max-width: 80px;
+  max-height: 32px;
+  width: auto;
   height: auto;
   flex-shrink: 0;
   opacity: 0.75;
