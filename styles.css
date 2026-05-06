@@ -164,12 +164,13 @@ main {
 .hero {
   display: flex;
   gap: 52px;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .hero-photo {
   width: 240px;
-  height: 300px;
+  height: auto;
+  align-self: stretch;
   border-radius: 12px;
   object-fit: cover;
   object-position: center 35%;
@@ -183,7 +184,12 @@ main {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding-top: 8px;
+}
+
+.hero-edu {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
 }
 
 .hero-name {
@@ -204,19 +210,6 @@ main {
   color: var(--text-muted);
   line-height: 1.75;
   max-width: 500px;
-}
-
-.hero-contact {
-  font-size: 0.9rem;
-  margin-top: 4px;
-}
-
-.hero-contact a {
-  color: var(--accent);
-}
-
-.hero-contact a:hover {
-  text-decoration: underline;
 }
 
 /* Sections */
@@ -345,7 +338,7 @@ main {
   .site-header { padding: 0 20px; }
   main { padding: 36px 20px 60px; gap: 40px; }
   .hero { flex-direction: column; align-items: flex-start; gap: 28px; }
-  .hero-photo { width: 160px; height: 200px; }
+  .hero-photo { width: 160px; height: 200px; align-self: auto; }
   .hero-name { font-size: 1.8rem; }
   .hero-blurb { max-width: 100%; }
   .site-nav { gap: 0; }
