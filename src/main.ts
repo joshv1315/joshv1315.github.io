@@ -4,6 +4,8 @@ interface Project {
   url: string;
   tags: string[];
   logo?: string;
+  dates?: string;
+  jobType?: "Full-time" | "Internship";
 }
 
 const workProjects: Project[] = [
@@ -14,6 +16,26 @@ const workProjects: Project[] = [
     url: "https://www.grocerydive.com/news/amazon-updates-smart-carts-whole-foods-rollout/809058/",
     tags: ["Golang", "Java", "TypeScript", "Angular", "gRPC", "Microservices", "Docker", "AWS Services"],
     logo: "imgs/logos/amazon.svg",
+    dates: "March 2025 – Present",
+    jobType: "Full-time",
+  },
+  {
+    name: "SoFi",
+    description:
+      "Built an internal tool that lets SoFi's small business lending team directly manage third-party loan offers, removing the need for engineering involvement on routine updates.",
+    url: "https://www.sofi.com/",
+    tags: ["Kotlin", "Spring Boot", "React", "AWS S3", "DynamoDB"],
+    dates: "May 2024 – August 2024",
+    jobType: "Internship",
+  },
+  {
+    name: "Capital One",
+    description:
+      "Built backend APIs powering the car comparison feature on Capital One's Auto Navigator, used by tens of thousands of customers researching auto loans every day.",
+    url: "https://www.capitalone.com/cars/",
+    tags: ["Kotlin", "Spring Boot"],
+    dates: "June 2023 – August 2023",
+    jobType: "Internship",
   },
 ];
 
@@ -40,6 +62,9 @@ function createProjectCard(project: Project): HTMLElement {
   const header = document.createElement("div");
   header.className = "project-header";
 
+  const headerLeft = document.createElement("div");
+  headerLeft.className = "project-header-left";
+
   const link = document.createElement("a");
   link.href = project.url;
   link.target = "_blank";
@@ -51,7 +76,19 @@ function createProjectCard(project: Project): HTMLElement {
   name.textContent = project.name;
 
   link.appendChild(name);
-  header.appendChild(link);
+  headerLeft.appendChild(link);
+
+  if (project.dates || project.jobType) {
+    const meta = document.createElement("p");
+    meta.className = "project-meta";
+    const parts: string[] = [];
+    if (project.dates) parts.push(project.dates);
+    if (project.jobType) parts.push(project.jobType);
+    meta.textContent = parts.join(" · ");
+    headerLeft.appendChild(meta);
+  }
+
+  header.appendChild(headerLeft);
 
   if (project.logo) {
     const logo = document.createElement("img");

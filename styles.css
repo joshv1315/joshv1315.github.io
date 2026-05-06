@@ -269,9 +269,22 @@ main {
   gap: 12px;
 }
 
+.project-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
 .project-link {
   display: block;
   min-width: 0;
+}
+
+.project-meta {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-subtle);
 }
 
 .project-name {
