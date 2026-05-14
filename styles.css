@@ -162,15 +162,12 @@ main {
 
 /* Hero */
 .hero {
-  display: flex;
+  display: grid;
+  grid-template-columns: 300px 1fr;
   gap: 52px;
-  align-items: stretch;
 }
 
 .hero-photo-wrap {
-  width: 300px;
-  flex-shrink: 0;
-  align-self: stretch;
   position: relative;
   border-radius: 12px;
   overflow: hidden;
@@ -345,8 +342,8 @@ main {
 @media (max-width: 640px) {
   .site-header { padding: 0 20px; }
   main { padding: 36px 20px 60px; gap: 40px; }
-  .hero { flex-direction: column; align-items: flex-start; gap: 28px; }
-  .hero-photo-wrap { width: 200px; aspect-ratio: 4 / 5; align-self: auto; }
+  .hero { grid-template-columns: 1fr; gap: 28px; }
+  .hero-photo-wrap { width: 200px; aspect-ratio: 4 / 5; }
   .hero-name { font-size: 1.8rem; }
   .hero-blurb { max-width: 100%; }
   .site-nav { gap: 0; }
