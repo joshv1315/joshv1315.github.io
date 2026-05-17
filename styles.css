@@ -189,6 +189,21 @@ main {
   box-shadow: var(--shadow);
 }
 
+.hero-photo-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  mix-blend-mode: multiply;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+[data-theme="dark"] .hero-photo-wrap::after {
+  opacity: 0.35;
+}
+
 .hero-photo {
   position: absolute;
   inset: 0;
@@ -344,11 +359,11 @@ main {
 /* Floating settings cluster */
 .settings {
   position: fixed;
-  bottom: 24px;
-  left: 24px;
+  bottom: 16px;
+  left: 16px;
   z-index: 50;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
   gap: 10px;
 }
@@ -392,6 +407,7 @@ main {
   pointer-events: none;
   transform-origin: bottom center;
   transition: opacity 0.2s ease, transform 0.2s ease;
+  order: -1;
 }
 
 .settings[data-open="true"] .settings-panel {
