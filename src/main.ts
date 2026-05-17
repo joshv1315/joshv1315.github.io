@@ -49,12 +49,6 @@ const personalProjects: Project[] = [
     url: "https://www.joshuavijayasegar.com",
     tags: ["TypeScript", "HTML", "CSS"],
   },
-  {
-    name: "hillklimb.com",
-    description: "Job search platform optimized for early career SWE recruiting.",
-    url: "#",
-    tags: ["In Development"],
-  },
 ];
 
 function createProjectCard(project: Project): HTMLElement {
