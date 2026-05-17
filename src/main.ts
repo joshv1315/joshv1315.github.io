@@ -131,6 +131,44 @@ function showToast(message: string): void {
   toastTimer = setTimeout(() => toast.classList.remove("show"), 3000);
 }
 
+function initSettings(): void {
+  const settings = document.getElementById("settings");
+  const settingsToggle = document.getElementById("settings-toggle");
+  const themeToggle = document.getElementById("theme-toggle");
+  if (!settings || !settingsToggle) return;
+
+  const setOpen = (open: boolean) => {
+    settings.dataset.open = open ? "true" : "false";
+    settingsToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  };
+
+  settingsToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    setOpen(settings.dataset.open !== "true");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!settings.contains(e.target as Node)) setOpen(false);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setOpen(false);
+  });
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const isDark = document.documentElement.dataset.theme === "dark";
+      if (isDark) {
+        delete document.documentElement.dataset.theme;
+        localStorage.setItem("theme", "light");
+      } else {
+        document.documentElement.dataset.theme = "dark";
+        localStorage.setItem("theme", "dark");
+      }
+    });
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderGrid(workProjects, "work-grid");
   renderGrid(personalProjects, "personal-grid");
@@ -141,4 +179,6 @@ document.addEventListener("DOMContentLoaded", () => {
       showToast("TODO: Add resume after updating it lol");
     });
   }
+
+  initSettings();
 });
