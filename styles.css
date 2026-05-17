@@ -335,7 +335,12 @@ main {
 }
 
 [data-theme="dark"] .project-logo {
-  filter: invert(1);
+  filter: invert(0.7);
+}
+
+[data-theme="dark"] .site-name,
+[data-theme="dark"] .hero-name {
+  color: var(--text-muted);
 }
 
 .project-desc {
