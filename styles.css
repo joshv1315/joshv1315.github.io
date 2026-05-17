@@ -331,6 +331,11 @@ main {
   height: auto;
   flex-shrink: 0;
   opacity: 0.75;
+  transition: filter 0.3s ease;
+}
+
+[data-theme="dark"] .project-logo {
+  filter: invert(1);
 }
 
 .project-desc {
@@ -437,7 +442,6 @@ main {
   padding: 20px;
   font-size: 0.8rem;
   color: var(--text-subtle);
-  border-top: 1px solid var(--border);
   position: relative;
   z-index: 1;
 }
